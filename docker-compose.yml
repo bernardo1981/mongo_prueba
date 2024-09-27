@@ -1,0 +1,12 @@
+version: '3'
+services:
+  mongo:
+    image: mongo:latest
+    container_name: mongodb
+    ports:
+      - "27017:27017"  # Mapea el puerto del host al contenedor
+    volumes:
+      - ./data:/data/db  # Persistir los datos localmente
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root  # Usuario root
+      MONGO_INITDB_ROOT_PASSWORD: example  # Contraseña root
